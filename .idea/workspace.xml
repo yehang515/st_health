@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b5764180-8387-4be1-8871-de9330753854" name="Default Changelist" comment="Dubbo 和 Zookeeper 调试完成&#10;完成一个添加流程跑通">
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/java/com/itheima/controller/CheckItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/css/orderset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/elementUI/01-container.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/elementUI/02-dropdown.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/elementUI/03-navmenu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/elementUI/04-table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/elementUI/05-pagination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/elementUI/06-message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/elementUI/07-tabs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/elementUI/08-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/american-express.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/avatar04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/avatar2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/avatar3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/avatar5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/boxed-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/boxed-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/cirrus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/loginLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/logingBg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/mastercard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/mestro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/minilogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/paypal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/paypal2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/photo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/photo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/photo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/photo4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/pwd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/user1-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/user2-160x160.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/user3-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/user4-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/user5-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/user6-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/user7-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/user8-128x128.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/img/visa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/js/axios-0.18.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/js/telephone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/js/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/checkgroup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/checkitem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/ordersetting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/permission.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/report_business.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/report_member.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/report_setmeal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/role.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/setmeal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/echarts/echarts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/elementui/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/elementui/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/elementui/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/plugins/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/template/ordersetting_template.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/template/report_template.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_interface/src/main/java/com/itheima/service/CheckItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_service_provider/src/main/java/com/itheima/dao/CheckItemDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_service_provider/src/main/java/com/itheima/service/impl/CheckItemServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health_parent/health_service_provider/src/main/resources/com/itheima/dao/CheckItemDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_backend/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_backend/src/main/resources/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/elementuidemo/01-container.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_common/src/main/java/com/itheima/util/SMSUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_common/src/main/java/com/itheima/util/SMSUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_common/target/health_common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_common/target/health_common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_common/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_common/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_interface/target/health_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_interface/target/health_interface-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_interface/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_interface/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_interface/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_interface/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/src/main/resources/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/src/main/resources/spring-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/src/main/resources/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/src/main/resources/spring-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/src/main/resources/spring-tx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/src/main/resources/spring-tx.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/classes/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/classes/spring-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/classes/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/classes/spring-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/classes/spring-tx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/classes/spring-tx.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/classes/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/classes/spring-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/classes/spring-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/classes/spring-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/classes/spring-tx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/classes/spring-tx.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/lib/health_common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/lib/health_common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/lib/health_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/lib/health_interface-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/health_service_provider-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-5.1.32.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/health_service_provider/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/health_service_provider/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health_parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_parent/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="st_health" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$MAVEN_REPOSITORY$" />
+        <option name="usePluginRegistry" value="true" />
+        <option name="userSettingsFile" value="$USER_HOME$/.m2/setting.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YN88atfZhq4XCAzf53BNUdcHZ6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/health_parent/health_service_provider/src/main/resources/com/itheima/dao" />
+      <recent name="$PROJECT_DIR$/health_parent/health_service_provider/src/main/java/com/itheima/dao" />
+      <recent name="$PROJECT_DIR$/health_parent/health_service_provider/src/main/java/com/itheima/mapper" />
+      <recent name="$PROJECT_DIR$/health_parent/health_service_provider/src/main/java/com/itheima/service/impl" />
+      <recent name="$PROJECT_DIR$/health_parent/health_interface/src/main/java/com/itheima/service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/health_parent/health_backend/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/health_parent/health_common/src/main/java/com/itheima/util" />
+      <recent name="$PROJECT_DIR$/health_parent/health_common/src/main/java/com/itheima/entify" />
+      <recent name="$PROJECT_DIR$/health_parent/health_common/src/main/java/com/itheima/constant" />
+      <recent name="$PROJECT_DIR$/health_parent/health_common/src/main/java/com/itheima/pojo" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5764180-8387-4be1-8871-de9330753854" name="Default Changelist" comment="" />
+      <created>1582771533567</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582771533567</updated>
+      <workItem from="1582771538628" duration="109000" />
+      <workItem from="1582771677936" duration="1562000" />
+      <workItem from="1582855749302" duration="1424000" />
+      <workItem from="1582896961723" duration="1889000" />
+      <workItem from="1583061591117" duration="15889000" />
+    </task>
+    <task id="LOCAL-00001" summary="add ignore file">
+      <created>1582771795592</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582771795592</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add common file">
+      <created>1582897199636</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582897199636</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add ignore file" />
+    <MESSAGE value="add common file" />
+    <MESSAGE value="Dubbo 和 Zookeeper 调试完成&#10;完成一个添加流程跑通" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dubbo 和 Zookeeper 调试完成&#10;完成一个添加流程跑通" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="346" y="128" key="#Project_Structure" timestamp="1583110306190">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state x="344" y="128" key="#Project_Structure/50.23.1390.877@50.23.1390.877" timestamp="1583066512598" />
+    <state x="346" y="128" key="#Project_Structure/53.23.1387.877@53.23.1387.877" timestamp="1583110306190" />
+    <state x="95" y="144" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583117003530">
+      <screen x="48" y="23" width="1392" height="877" />
+    </state>
+    <state x="95" y="144" key="#com.intellij.execution.impl.EditConfigurationsDialog/48.23.1392.877@48.23.1392.877" timestamp="1583117003530" />
+    <state x="100" y="144" key="#com.intellij.execution.impl.EditConfigurationsDialog/53.23.1387.877@53.23.1387.877" timestamp="1583062870100" />
+    <state x="569" y="180" key="#com.intellij.ide.util.MemberChooser" timestamp="1583115003606">
+      <screen x="48" y="23" width="1392" height="877" />
+    </state>
+    <state x="569" y="180" key="#com.intellij.ide.util.MemberChooser/48.23.1392.877@48.23.1392.877" timestamp="1583115003606" />
+    <state x="579" y="370" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582896553690">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state x="579" y="370" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/53.23.1387.877@53.23.1387.877" timestamp="1582896553690" />
+    <state x="763" y="211" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583112393375">
+      <screen x="52" y="23" width="1388" height="877" />
+    </state>
+    <state x="763" y="211" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/52.23.1388.877@52.23.1388.877" timestamp="1583112393375" />
+    <state x="257" y="66" key="CommitChangelistDialog2" timestamp="1583127069562">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state x="257" y="66" key="CommitChangelistDialog2/53.23.1387.877@53.23.1387.877" timestamp="1583127069562" />
+    <state width="1345" height="314" key="GridCell.Tab.0.bottom" timestamp="1583127179154">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state width="1345" height="371" key="GridCell.Tab.0.bottom/48.23.1392.877@48.23.1392.877" timestamp="1583119182047" />
+    <state width="1345" height="230" key="GridCell.Tab.0.bottom/50.23.1390.877@50.23.1390.877" timestamp="1583120060581" />
+    <state width="1345" height="314" key="GridCell.Tab.0.bottom/53.23.1387.877@53.23.1387.877" timestamp="1583127179154" />
+    <state width="1345" height="314" key="GridCell.Tab.0.center" timestamp="1583127179153">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state width="1345" height="371" key="GridCell.Tab.0.center/48.23.1392.877@48.23.1392.877" timestamp="1583119182045" />
+    <state width="1345" height="230" key="GridCell.Tab.0.center/50.23.1390.877@50.23.1390.877" timestamp="1583120060580" />
+    <state width="1345" height="314" key="GridCell.Tab.0.center/53.23.1387.877@53.23.1387.877" timestamp="1583127179153" />
+    <state width="1345" height="314" key="GridCell.Tab.0.left" timestamp="1583127179152">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state width="1345" height="371" key="GridCell.Tab.0.left/48.23.1392.877@48.23.1392.877" timestamp="1583119182045" />
+    <state width="1345" height="230" key="GridCell.Tab.0.left/50.23.1390.877@50.23.1390.877" timestamp="1583120060563" />
+    <state width="1345" height="314" key="GridCell.Tab.0.left/53.23.1387.877@53.23.1387.877" timestamp="1583127179152" />
+    <state width="1345" height="314" key="GridCell.Tab.0.right" timestamp="1583127179154">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state width="1345" height="371" key="GridCell.Tab.0.right/48.23.1392.877@48.23.1392.877" timestamp="1583119182046" />
+    <state width="1345" height="230" key="GridCell.Tab.0.right/50.23.1390.877@50.23.1390.877" timestamp="1583120060581" />
+    <state width="1345" height="314" key="GridCell.Tab.0.right/53.23.1387.877@53.23.1387.877" timestamp="1583127179154" />
+    <state x="389" y="126" key="Maven.ArtifactSearchDialog" timestamp="1582897810066">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state x="389" y="126" key="Maven.ArtifactSearchDialog/53.23.1387.877@53.23.1387.877" timestamp="1582897810066" />
+    <state x="416" y="66" key="SettingsEditor" timestamp="1582897709654">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state x="416" y="66" key="SettingsEditor/53.23.1387.877@53.23.1387.877" timestamp="1582897709654" />
+    <state x="468" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582897166475">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state x="468" y="386" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/53.23.1387.877@53.23.1387.877" timestamp="1582897166475" />
+    <state x="727" y="216" width="713" height="480" key="find.popup" timestamp="1583126583671">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state x="727" y="216" width="713" height="480" key="find.popup/48.23.1392.877@48.23.1392.877" timestamp="1583116283364" />
+    <state x="727" y="216" width="713" height="480" key="find.popup/53.23.1387.877@53.23.1387.877" timestamp="1583126583671" />
+    <state x="411" y="211" key="run.anything.popup" timestamp="1582896993638">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state x="411" y="211" key="run.anything.popup/53.23.1387.877@53.23.1387.877" timestamp="1582896993638" />
+    <state x="411" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1582896895092">
+      <screen x="53" y="23" width="1387" height="877" />
+    </state>
+    <state x="411" y="213" width="670" height="676" key="search.everywhere.popup/53.23.1387.877@53.23.1387.877" timestamp="1582896895092" />
+    <state x="333" y="163" key="spring file set editor" timestamp="1583116187145">
+      <screen x="48" y="23" width="1392" height="877" />
+    </state>
+    <state x="333" y="163" key="spring file set editor/48.23.1392.877@48.23.1392.877" timestamp="1583116187145" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/health_parent/health_backend/src/main/webapp/pages/checkitem.html</url>
+          <line>289</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

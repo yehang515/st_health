@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--namespace指定mapper接口-->
+<mapper namespace="com.itheima.dao.CheckItemDao">
+    <!--自定义添加一条检查项-->
+    <insert id="add" parameterType="com.itheima.pojo.CheckItem">
+        insert into t_checkitem(code,name,sex,age,price,type,remark,attention)
+values
+(#{code},#{name},#{sex},#{age},#{price},#{type},#{remark},#{attention})
+    </insert>
+<!--    &lt;!&ndash;进行模糊分页查询&ndash;&gt;-->
+<!--    <select id="selectByCondition" parameterType="String" resultType="CheckItem">-->
+<!--        select * from t_checkitem-->
+<!--        <if test="value != null and value.length > 0">-->
+<!--            where code = #{value} or name = #{value}-->
+<!--        </if>-->
+<!--    </select>-->
+<!--    &lt;!&ndash;查询检查组和检查项中间表&ndash;&gt;-->
+<!--    <select id="selectGroupAndItem" parameterType="int" resultType="long">-->
+<!--        select count(*) from t_checkgroup_checkitem where checkitem_id = #{checkitem_id}-->
+<!--    </select>-->
+<!--    &lt;!&ndash;点击删除按钮删除指定信息&ndash;&gt;-->
+<!--    <delete id="deleteItemById" parameterType="int">-->
+<!--        delete from t_checkitem where id = #{id}-->
+<!--    </delete>-->
+<!--    &lt;!&ndash;编辑前查询数据回写&ndash;&gt;-->
+<!--    <select id="findById" parameterType="int" resultType="CheckItem">-->
+<!--        select * from t_checkitem where id = #{id}-->
+<!--    </select>-->
+<!--    &lt;!&ndash;修改单条checkitem信息&ndash;&gt;-->
+<!--    <update id="updateItem" parameterType="CheckItem">-->
+<!--        UPDATE t_checkitem-->
+<!--        <set>-->
+<!--            <if test="name != null">-->
+<!--                name = #{name},-->
+<!--            </if>-->
+<!--            <if test="sex != null">-->
+<!--                sex = #{sex},-->
+<!--            </if>-->
+<!--            <if test="code != null">-->
+<!--                code = #{code},-->
+<!--            </if>-->
+<!--            <if test="age != null">-->
+<!--                age = #{age},-->
+<!--            </if>-->
+<!--            <if test="price != null">-->
+<!--                price = #{price},-->
+<!--            </if>-->
+<!--            <if test="type != null">-->
+<!--                type = #{type},-->
+<!--            </if>-->
+<!--            <if test="attention != null">-->
+<!--                attention = #{attention},-->
+<!--            </if>-->
+<!--            <if test="remark != null">-->
+<!--                remark = #{remark},-->
+<!--            </if>-->
+<!--        </set>-->
+<!--        where id=#{id}-->
+<!--    </update>-->
+</mapper>

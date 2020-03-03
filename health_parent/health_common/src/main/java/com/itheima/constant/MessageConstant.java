@@ -12,6 +12,10 @@ public class MessageConstant {
     public static final String EDIT_CHECKITEM_SUCCESS = "编辑检查项成功";
     public static final String QUERY_CHECKITEM_SUCCESS = "查询检查项成功";
     public static final String QUERY_CHECKITEM_FAIL = "查询检查项失败";
+    public static final String QUERY_USER_SUCCESS = "查询用户成功";
+    public static final String QUERY_USER_FAIL = "查询用户失败";
+    public static final String QUERY_ROLE_SUCCESS = "查询角色成功";
+    public static final String QUERY_ROLE_FAIL = "查询角色失败";
     public static final String UPLOAD_SUCCESS = "上传成功";
     public static final String ADD_CHECKGROUP_FAIL = "新增检查组失败";
     public static final String ADD_CHECKGROUP_SUCCESS = "新增检查组成功";
@@ -21,6 +25,8 @@ public class MessageConstant {
     public static final String QUERY_CHECKGROUP_FAIL = "查询检查组失败";
     public static final String EDIT_CHECKGROUP_FAIL = "编辑检查组失败";
     public static final String EDIT_CHECKGROUP_SUCCESS = "编辑检查组成功";
+    public static final String EDIT_USER_FAIL = "编辑用户失败";
+    public static final String EDIT_USER_SUCCESS = "编辑用户成功";
     public static final String PIC_UPLOAD_SUCCESS = "图片上传成功";
     public static final String PIC_UPLOAD_FAIL = "图片上传失败";
     public static final String ADD_SETMEAL_FAIL = "新增套餐失败";
@@ -34,6 +40,10 @@ public class MessageConstant {
     public static final String ADD_MEMBER_FAIL = "新增会员失败";
     public static final String ADD_MEMBER_SUCCESS = "新增会员成功";
     public static final String DELETE_MEMBER_FAIL = "删除会员失败";
+    public static final String ADD_USER_SUCCESS = "新增用户成功";
+    public static final String ADD_USER_FAIL = "新增用户失败";
+    public static final String DELETE_USER_FAIL = "删除用户失败";
+    public static final String DELETE_USER_SUCCESS = "删除用户成功";
     public static final String DELETE_MEMBER_SUCCESS = "删除会员成功";
     public static final String EDIT_MEMBER_FAIL = "编辑会员失败";
     public static final String EDIT_MEMBER_SUCCESS = "编辑会员成功";

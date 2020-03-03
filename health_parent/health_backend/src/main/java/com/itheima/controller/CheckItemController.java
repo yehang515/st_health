@@ -8,10 +8,7 @@ import com.itheima.entify.Result;
 import com.itheima.pojo.CheckItem;
 import com.itheima.service.CheckItemService;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/checkitem")
@@ -58,7 +55,7 @@ public class CheckItemController {
     }
 
     @PreAuthorize("hasAnyAuthority('USER_QUERY')")//权限校验
-    @RequestMapping("/findById.do")
+    @PostMapping("/findById.do")
     public Result findById(Integer id){
         CheckItem checkItem = null;
         try {

@@ -10,7 +10,7 @@
         <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
         <!-- 引入样式 -->
         <link rel="stylesheet" href="../plugins/elementui/index.css">
-        <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min(1).css">
         <link rel="stylesheet" href="../css/style.css">
         <!-- 引入组件库 -->
         <script type="text/javascript" src="../js/jquery.min.js"></script>
@@ -90,17 +90,17 @@
                     <div class="add-form">
                         <el-dialog title="新增检查组" :visible.sync="dialogFormVisible">
                             <template>
-                                <el-tabs ref="dataAddForm" v-model="activeName" type="card">
+                                <el-tabs v-model="activeName" type="card">
                                     <el-tab-pane label="基本信息" name="first">
-                                        <el-form label-position="right" label-width="100px">
+                                        <el-form ref="dataAddForm" :model="formData" :rules="rules" label-position="right" label-width="100px">
                                             <el-row>
                                                 <el-col :span="12">
-                                                    <el-form-item label="编码">
+                                                    <el-form-item label="编码"  prop="code">
                                                         <el-input v-model="formData.code"/>
                                                     </el-form-item>
                                                 </el-col>
                                                 <el-col :span="12">
-                                                    <el-form-item label="名称">
+                                                    <el-form-item label="名称" prop="name">
                                                         <el-input v-model="formData.name"/>
                                                     </el-form-item>
                                                 </el-col>
@@ -116,7 +116,7 @@
                                                     </el-form-item>
                                                 </el-col>
                                                 <el-col :span="12">
-                                                    <el-form-item label="助记码">
+                                                    <el-form-item label="助记码" prop="helpCode">
                                                         <el-input v-model="formData.helpCode"/>
                                                     </el-form-item>
                                                 </el-col>
@@ -235,7 +235,7 @@
 												<tbody>
 													<tr v-for="c in tableData">
 														<td>
-															<input :id="c.id" v-model="checkitemIds" type="checkbox" :value="c.id" >
+															<input :id="c.id" v-model="checkitemIds" type="checkbox" :value="c.id">
 														</td>
 														<td><label :for="c.id">{{c.code}}</label></td>
 														<td><label :for="c.id">{{c.name}}</label></td>
@@ -266,7 +266,7 @@
                 pagination: {//分页相关属性
                     currentPage: 1,
                     pageSize:10,
-                    total:0,
+                    total:100,
                     queryString:null,
                 },
                 dataList: [],//列表数据
@@ -274,143 +274,174 @@
                 tableData:[],//新增和编辑表单中对应的检查项列表数据
                 checkitemIds:[],//新增和编辑表单中检查项对应的复选框，基于双向绑定可以进行回显和数据提交
                 dialogFormVisible: false,//控制添加窗口显示/隐藏
-                dialogFormVisible4Edit:false//控制编辑窗口显示/隐藏
+                dialogFormVisible4Edit:false,//控制编辑窗口显示/隐藏
+                rules: {//校验规则
+                    code: [{ required: true, message: '项目编码为必填项', trigger: 'blur' }],
+                    name: [{ required: true, message: '项目名称为必填项', trigger: 'blur' }],
+                   helpCode: [{ required: true, message: '项目助记码为必填项', trigger: 'blur' }],
+                }
             },
             created() {
                 this.findPage();
+                axios.get("/user/CheckItem.do").then((res)=>{
+                    this.checkItem = res.data;
+                    if(!res.data.edit && !res.data.delte){
+                        this.option = false;
+                    }
+                })
             },
             methods: {
                 //编辑
                 handleEdit() {
-                    //封装数据,发送异步请求
-                    axios.post("/checkgroup/update.do?checkitemIds="+this.checkitemIds,this.formData).then((resp)=>{
-                        if(resp.data.flag){
-                            //添加数据成功,刷新页面
-                            this.findPage();
+                    //重新编辑检查组，发送异步请求
+                    axios.post("/checkGroup/editCheckGroup.do?ids="+this.checkitemIds,this.formData).then((res)=>{
+                        this.dialogFormVisible4Edit=false;
+                        if(res.data.flag){
                             this.$message({
-                                message:resp.data.message,
-                                type:"success"
-                            });
-                        }else {
-                            this.$message.error(resp.data.message);
+                                type:'success',
+                                message:res.data.message
+                            })
+                        }else{
+                            this.$message.error(res.data.message)
                         }
                     }).finally(()=>{
-                        this.dialogFormVisible4Edit = false;
+                        this.findPage();
                     })
-
                 },
                 //添加
                 handleAdd () {
-                    //校验表单数据
-               /*     this.$refs['dataAddForm'].validate((valid)=>{
-                        if(valid){*/
-                            //如果表单验证通过,那么封装表单数据提交
-                            axios.post("/checkgroup/add.do?checkitemIds="+this.checkitemIds,this.formData).then((resp)=>{
-                                if(resp.data.flag){
-                                    //添加检查组成功
-                                    this.findPage();
-                                    this.$message({
-                                       message:resp.data.message,
-                                       type:'success'
-                                    });
-                                }else {
-                                    //添加检查组失败
-                                    this.$message.error(resp.data.message);
-                                }
-                            }).finally(()=>{
-                                this.dialogFormVisible = false;
-                            })
-                   /*     }else {
-                            this.$message.error("数据有误,请检查重新输入");
-                        }
-                    })*/
+                    //隐藏新建组信息
+                    this.dialogFormVisible= false;
+                    //当点击确定按钮后，发送异步请求，新增检查组，进行页面信息的提示,提交的时候既要提交检查组的信息，还要提交选中的检查项id
+                   this.$refs['dataAddForm'].validate((valid)=>{
+                       if(valid) {
+                           axios.post("/checkGroup/addCheckGroup.do?ids=" + this.checkitemIds, this.formData).then((res) => {
+                               //当添加信息成功后，对用户进行信息的提示
+                               if (res.data.flag) {
+                                   this.$message({
+                                       type: 'success',
+                                       message: res.data.message
+                                   })
+                               } else {
+                                   // 提示用户信息添加数据失败
+                                   this.$message.error(res.data.message);
+                               }
+                           }).finally(() => {
+                               this.pagination.queryString = null;
+                               this.findPage();
+                           })
+                       }else{
+                           this.$message.error('新建失败');
+                           return false;
+                       }
+                   })
                 },
                 //分页查询
                 findPage() {
-                    //封装请求参数
-                    var param = {
-                        currentPage:this.pagination.currentPage,//当前页码
-                        pageSize:this.pagination.pageSize,//每页显示条数
-                        queryString:this.pagination.queryString//查询条件
-                    }
-                    //发送异步请求,查询检查组表单
-                    axios.post("/checkgroup/findAll.do",param).then((resp)=>{
-                            //查询检查项成功,返回PageResult结果集
-                            this.dataList = resp.data.rows,
-                                this.pagination.total = resp.data.total
-                    });
+                    //分页查询，传递一个json类型的数据 当前页 ，当前页显示的条数，查询的条件
+                    var param ={
+                         currentPage:this.pagination.currentPage, //当前页码数
+                         pageSize:this.pagination.pageSize,
+                        queryString:this.pagination.queryString
+                    };
+                    //发送异步请求，进行分页查询
+                    axios.post("/checkGroup/findPage.do",param).then((res)=>{
+                            this.dataList = res.data.rows;
+                            this.pagination.total = res.data.total;
+                    })
                 },
                 // 重置表单
                 resetForm() {
-                    this.formData = {};
-                    this.checkitemIds=[];
+                    this. formData={};
+                    this.$refs['dataAddForm'].resetFields();//重置检查组校验
                 },
                 // 弹出添加窗口
                 handleCreate() {
-                    //每次打开新增表单时重置表单
+                    //当点击了新建按钮后，弹出新建表单，将新建表单的结果该为true
+                    this.dialogFormVisible=true;
+                    //再次点击添加按钮重置表单数据
                     this.resetForm();
-                    this.dialogFormVisible = true;
-                    //发送异步请求,将检查项集合展示在相应模块tableData:[],新增和编辑表单中对应的检查项列表数据
-                    axios.post("/checkgroup/checkitemList.do").then((resp)=>{
-                        this.tableData = resp.data.checkItems;
+                    //将显示页改为默认的第一页
+                    this. activeName='first';
+                    //重置检查项数据
+                    this.checkitemIds=[];
+                    //发送异步请求进行检查项数据的回显
+                    axios.get("/checkItem/findAll.do").then((res)=>{
+                        if (res.data.flag){
+                            //将查询到的检查项数据进行回显
+                            this.tableData = res.data.data;
+                        } else{
+                            this.$message.error(this.data.message);
+                        }
                     })
                 },
                 // 弹出编辑窗口
                 handleUpdate(row) {
-                    //查找检查项
-                    axios.post("/checkgroup/checkitemList.do").then((resp)=>{
-                        this.tableData = resp.data.checkItems;
-                    })
-                    //回写数据
-                    axios.post("/checkgroup/findById.do?id="+row.id).then((resp)=>{
-                        if(resp.data.flag){
-                            this.dialogFormVisible4Edit = true;
-                            //查询数据成功
-                            this.formData = resp.data.data;
-                            //回写复选框选项
-                            axios.post("/checkgroup/findByCheckItemIds.do?id="+row.id).then((resp)=>{
-                                this.checkitemIds = resp.data.data;
+                //点击编辑窗口的时候弹出，编辑表单项,发送异步请求，进行页面数据的回写
+                    this.dialogFormVisible4Edit=true;
+                    //将编辑窗口的状态改为第一页
+                    this.activeName='first';//添加/编辑窗口Tab标签名称
+                    //检查组数据的回显
+                    axios.get("/checkGroup/findCheckGroupById.do?id="+row.id).then((res)=>{
+                        if(res.data.flag){
+                            this.formData = res.data.data;
+                        }else{
+                            this.$message.error(this.data.message);
+                        }
+                    });
+                    //发送异步请求进行检查项数据的回显
+                    axios.get("/checkItem/findAll.do").then((res)=>{
+                        if (res.data.flag){
+                            //将查询到的检查项数据进行回显
+                            this.tableData = res.data.data;
+                            //当检查项的信息回显成功后，根据检查组的id回显当前检查项的信息
+                            axios.get("/checkGroup/CheckGroupIdsByCheckGroupIds.do?id="+row.id).then((res)=>{
+                                if(res.data.flag){
+                                    //当前检查组下的检查项信息的回显
+                                    this.checkitemIds = res.data.data;
+                                }else{
+                                    //错误信息提示
+                                    this.$message.error(this.data.message)
+                                }
                             })
-                            // this.checkitemIds = resp.data.data.checkItems;
-                            this.$message({
-                                message:resp.data.message,
-                                type:'success'
-                            });
-                        }else {
-                            //查询失败
-                            this.$message.error(resp.data.message);
+                        } else{
+                            this.$message.error(this.data.message);
                         }
                     });
                 },
                 //切换页码
                 handleCurrentChange(currentPage) {
+                    //当点击切换下一页的时候，进行分页查询，该变当前页码数,调用findPage 方法
                     this.pagination.currentPage = currentPage;
+                    //切换页码的时候可能存在一个条件查询，为了避免这种情况，我们要在点击下一页的时候，将当前的查询条件设置为空
+                    this.pagination.queryString = null;
+                    //分页查询方法的调用
                     this.findPage();
+
                 },
                 // 删除
                 handleDelete(row) {
-                    this.$confirm("确定是否删除","提示",{
-                        type:'warning'//提示框
-                    }).then(()=>{
-                        //发起异步请求
-                    axios.post("/checkgroup/deleteOne.do?id="+row.id).then((resp)=>{
-                        if(resp.data.flag){
-                            //删除数据成功
+                    //删除检查组，点击删除检查组的时候，进行用户提示
+                    this.$confirm('你确定进行当前操作','提示').then(()=>{
+                    // 发送异步请求，根据id删除对应的检查组数据
+                        axios.get('/checkGroup/deleteCheckGroup.do?id='+row.id).then((res)=>{
+                            if(res.data.flag){
+                                this.$message({
+                                    type:'success',
+                                    message:res.data.message
+                                })
+                            }else{
+                                this.$message.error(res.data.message)
+                            }
+                        }).finally(()=>{
                             this.findPage();
-                            this.$message({
-                                message:resp.data.message,
-                                type:'success'
-                            });
-                        }else {
-                            this.$message.error(resp.data.message);
-                            return false;
-                        }
-                    });
-                    }).catch(()=>{
+                        })
+                }).catch(()=> {
                         this.$message({
-                            message:"已取消",
-                            type:'info'});
-                    });
+                            type: 'info',
+                            message: '操作失败'
+                        })
+                    })
                 }
             }
         })

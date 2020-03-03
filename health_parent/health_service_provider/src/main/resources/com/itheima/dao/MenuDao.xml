@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--namespace指定mapper接口-->
+<mapper namespace="com.itheima.dao.MenuDao">
+<select id="findMenuByUsername" parameterType="String" resultType="com.itheima.pojo.Menu">
+    select a.* from t_menu a,t_user b,t_user_role c,t_role_menu d
+    where a.id = d.menu_id and d.role_id = c.role_id and c.user_id = b.id and b.username = #{username}
+</select>
+
+
+
+    <!--分页查询-->
+    <select id="findPage" resultType="com.itheima.pojo.Role" parameterType="String">
+        select * from t_role
+        <if test="value!=null and value.length > 0">
+            where id = #{value} or name = #{value}
+        </if>
+    </select>
+
+    <!--查询所有菜单-->
+    <select id="findAllMenu" resultType="com.itheima.pojo.Menu">
+        select * from t_menu
+
+    </select>
+
+    <!--根据角色id查询菜单-->
+    <select id="findMenusByRoleId" resultType="java.lang.Integer" parameterType="int">
+        select menu_id from t_role_menu where role_id = #{id}
+    </select>
+
+
+    <!--分页查询菜单-->
+    <select id="findMenuPage" resultType="com.itheima.pojo.Menu" parameterType="String">
+        select * from t_menu
+        <if test="value!=null and value.length > 0">
+            where id = #{value} or name = #{value}
+        </if>
+    </select>
+
+
+    <!--新增菜单-->
+    <insert id="addMenu" parameterType="com.itheima.pojo.Menu">
+        insert into t_menu values
+        (null,#{name},#{linkUrl},#{path},#{priority},#{icon},#{description},#{parentMenuId},null)
+    </insert>
+
+
+    <!--根据id查询菜单-->
+    <select id="findMenuById" resultType="com.itheima.pojo.Menu" parameterType="int">
+        select * from t_menu where id = #{id}
+    </select>
+
+
+    <!--//编辑菜单-->
+    <update id="editMenu" parameterType="com.itheima.pojo.Menu" >
+        update t_menu
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="linkUrl != null">
+                linkUrl = #{linkUrl},
+            </if>
+            <if test="path != null">
+                path = #{path},
+            </if>
+            <if test="priority != null">
+                priority = #{priority},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="icon != null">
+                icon = #{icon},
+            </if>
+            <if test="parentMenuId != null">
+                parentMenuId = #{parentMenuId},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+
+    <!--根据menuId查询roles-->
+    <select id="findMenusByMenuId" parameterType="int" resultType="int">
+        select role_id from t_role_menu where menu_id = #{id}
+    </select>
+
+
+    <!--删除菜单-->
+    <delete id="delete" parameterType="int">
+        delete from t_menu where id = #{id}
+    </delete>
+
+
+    <!--根据id查询角色跟菜单的关联关系-->
+    <select id="findMenuIdsById" resultType="java.lang.Integer" parameterType="int">
+        select menu_id from t_role_menu where role_id = #{id}
+    </select>
+
+
+    <delete id="delMenuIds" parameterType="int">
+        delete from t_role_menu where role_id = #{id}
+    </delete>
+
+
+    <!--添加角色和菜单的中间关系表-->
+    <insert id="addRoleAndMenu" parameterType="com.itheima.pojo.map">
+        insert into t_role_menu
+        values
+        <foreach collection="menuIds" item="item" separator=",">
+            (#{roleId},#{item})
+        </foreach>
+    </insert>
+
+
+</mapper>

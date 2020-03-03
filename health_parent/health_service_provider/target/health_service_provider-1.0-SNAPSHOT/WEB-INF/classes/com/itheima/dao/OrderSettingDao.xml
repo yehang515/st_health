@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--namespace指定mapper接口-->
+<mapper namespace="com.itheima.dao.OrderSettingDao">
+    <select id="findByOrderDate" parameterType="date" resultType="long">
+        SELECT count(id) from t_ordersetting where orderDate = #{orderDate}
+    </select>
+
+    <!--更新操作-->
+    <update id="updateOrderSetting" parameterType="orderSetting">
+        update t_ordersetting set number =#{number} where orderDate = #{orderDate}
+    </update>
+
+    <!--插入操作-->
+    <insert id="insertOrderSetting" parameterType="orderSetting">
+        insert into t_ordersetting(number,orderDate) values(#{number},#{orderDate})
+    </insert>
+
+    <select id="getOrderListByDateStr" parameterType="string" resultType="orderSetting">
+        SELECT * from t_ordersetting where orderDate like CONCAT(CONCAT(#{date}),'%')
+    </select>
+
+    <select id="findOrderByDate" parameterType="date" resultType="orderSetting">
+        SELECT * from t_ordersetting WHERE orderDate = #{orderDate}
+    </select>
+
+    <update id="editReservations" parameterType="orderSetting">
+        UPDATE t_ordersetting set reservations = #{reservations}
+    </update>
+</mapper>

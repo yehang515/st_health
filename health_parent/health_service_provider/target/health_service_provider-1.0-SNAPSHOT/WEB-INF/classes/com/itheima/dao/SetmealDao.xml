@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--namespace指定mapper接口-->
+<mapper namespace="com.itheima.dao.SetmealDao">
+    <!--自定义添加一条检查组-->
+    <insert id="insertSetmeal" parameterType="com.itheima.pojo.Setmeal">
+        <selectKey keyProperty="id" order="AFTER" resultType="int">
+            SELECT LAST_insert_id()
+        </selectKey>
+        insert into t_setmeal
+        (code,name,sex,age,helpCode,price,remark,attention,img)
+        values
+        (#{code},#{name},#{sex},#{age},#{helpCode},#{price},#{remark},#{attention},#{img})
+    </insert>
+    <!--插入中间表-->
+    <insert id="insertSetmealAndGroup">
+        insert into t_setmeal_checkgroup(setmeal_id,checkgroup_id) values(#{setmealId},#{checkgroupId})
+    </insert>
+    <!--进行模糊分页查询-->
+    <select id="findByCondition" parameterType="String" resultType="Setmeal">
+        select * from t_setmeal
+        <if test="value != null and value.length > 0">
+            where code = #{value} or name = #{value} or helpCode = #{value}
+        </if>
+    </select>
+
+    <!--查询套餐所有数据-->
+    <select id="findAllSetmeal" resultType="setmeal">
+        select * from t_setmeal
+    </select>
+
+    <!--查询单条套餐-->
+    <select id="finSetmealById" parameterType="int" resultType="Setmeal">
+        SELECT * FROM t_setmeal where id = #{id}
+    </select>
+
+    <!--查询套餐关联的检查组id集合-->
+    <select id="findsById" parameterType="int" resultType="int">
+        select checkgroup_id from t_setmeal_checkgroup where setmeal_id= #{id}
+    </select>
+
+    <select id="findAllsetmealNames" resultType="String">
+        select name from t_setmeal
+    </select>
+</mapper>

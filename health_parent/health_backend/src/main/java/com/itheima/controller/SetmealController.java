@@ -29,7 +29,7 @@ public class SetmealController {
     @Reference
     private SetmealService setmealService;
 
-   // @Resource(name = "jedisPool")
+    @Resource(name = "jedisPool")
     private JedisPool jedisPool;
 
 

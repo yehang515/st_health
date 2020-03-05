@@ -18,7 +18,7 @@
         insert into t_setmeal_checkgroup(setmeal_id,checkgroup_id) values(#{setmealId},#{checkgroupId})
     </insert>
     <!--进行模糊分页查询-->
-    <select id="findByCondition" parameterType="String" resultType="Setmeal">
+    <select id="findByCondition" parameterType="String" resultType="com.itheima.pojo.Setmeal">
         select * from t_setmeal
         <if test="value != null and value.length > 0">
             where code = #{value} or name = #{value} or helpCode = #{value}
@@ -26,12 +26,12 @@
     </select>
 
     <!--查询套餐所有数据-->
-    <select id="findAllSetmeal" resultType="setmeal">
+    <select id="findAllSetmeal" resultType="com.itheima.pojo.Setmeal">
         select * from t_setmeal
     </select>
 
     <!--查询单条套餐-->
-    <select id="finSetmealById" parameterType="int" resultType="Setmeal">
+    <select id="finSetmealById" parameterType="int" resultType="com.itheima.pojo.Setmeal">
         SELECT * FROM t_setmeal where id = #{id}
     </select>
 
@@ -43,4 +43,34 @@
     <select id="findAllsetmealNames" resultType="String">
         select name from t_setmeal
     </select>
+
+    <!--首先根据id查询出对应的套餐项数据-->
+    <select id="findById"  resultMap="findSetmeal">
+        select * from t_setmeal where id = #{id}
+    </select>
+    <select id="findSetmealNameAndCount" resultType="java.util.Map">
+      SELECT ts.`name`,COUNT(tor.`setmeal_id`) value FROM t_order tor,t_setmeal ts WHERE tor.`setmeal_id` = ts.`id` GROUP BY (ts.`name`)
+    </select>
+    <!-- -->
+    <resultMap id="findBaseSetmeal" type="com.itheima.pojo.Setmeal">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="code" property="code"></result>
+        <result column="helpCode" property="helpCode"></result>
+        <result column="sex" property="sex"></result>
+        <result column="age" property="age"></result>
+        <result column="price" property="price"></result>
+        <result column="remark" property="remark"></result>
+        <result column="attention" property="attention"></result>
+        <result column="img" property="img"></result>
+    </resultMap>
+    <resultMap id="findSetmeal" type="com.itheima.pojo.Setmeal" extends="findBaseSetmeal">
+        <collection property="checkGroups"
+                    column="id"
+                    javaType="ArrayList"
+                    ofType="CheckGroup"
+                    select="cn.itcastma.dao.CheckGroupDao.findCheckgroupById">
+        </collection>
+    </resultMap>
+
 </mapper>

@@ -27,14 +27,14 @@ values
     </foreach>-->
 </insert>
     <!--进行模糊分页查询-->
-    <select id="selectByCondition" parameterType="String" resultType="CheckGroup">
+    <select id="selectByCondition" parameterType="String" resultType="com.itheima.pojo.CheckGroup">
         select * from t_checkgroup
         <if test="value != null and value.length > 0">
             where code = #{value} or name = #{value}
         </if>
     </select>
     <!--编辑前查询数据回写-->
-    <select id="findById" parameterType="int" resultType="CheckGroup">
+    <select id="findById" parameterType="int" resultType="com.itheima.pojo.CheckGroup">
         select * from t_checkgroup where id = #{id}
     </select>
     <!--根据检查组id查找对应的检查项id集合-->
@@ -56,7 +56,7 @@ values
         delete from t_checkgroup_checkitem where checkgroup_id =  #{id}
     </delete>
     <!--修改单条checkGroup信息-->
-    <update id="updateGroup" parameterType="CheckGroup">
+    <update id="updateGroup" parameterType="com.itheima.pojo.CheckGroup">
         update t_checkgroup
         <set>
             <if test="name != null">
@@ -80,4 +80,25 @@ values
         </set>
         where id = #{id}
     </update>
+
+
+    <select id="findCheckgroupById" resultMap="findCheckgroup">
+       SELECT * FROM t_checkgroup WHERE id IN (SELECT checkgroup_id FROM `t_setmeal_checkgroup` WHERE setmeal_id = #{id});
+    </select>
+    <resultMap id="findbaseCheckgroup" type="CheckGroup">
+        <id column="id" property="id"></id>
+        <result column="code" property="code"></result>
+        <result column="name" property="name"></result>
+        <result column="helpCode" property="helpCode"></result>
+        <result column="sex" property="sex"></result>
+        <result column="remark" property="remark"></result>
+        <result column="attention" property="attention"></result>
+    </resultMap>
+    <resultMap id="findCheckgroup" type="CheckGroup" extends="findbaseCheckgroup">
+        <collection property="checkItems" column="id"
+                    javaType="ArrayList" ofType="CheckItem"
+                    select="cn.itcastma.dao.CheckItemDao.findAllcheckItemsBycheckgroupId"></collection>
+    </resultMap>
+
+
 </mapper>

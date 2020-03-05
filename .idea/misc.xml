@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/health_parent/health_backend" />
+    <file type="web" url="file://$PROJECT_DIR$/health_parent/health_jobs" />
     <file type="web" url="file://$PROJECT_DIR$/health_parent/health_service_provider" />
   </component>
   <component name="JavaScriptSettings">
@@ -12,6 +13,7 @@
       <list>
         <option value="$PROJECT_DIR$/health_parent/health_backend/pom.xml" />
         <option value="$PROJECT_DIR$/health_parent/pom.xml" />
+        <option value="$PROJECT_DIR$/health_parent/health_jobs/pom.xml" />
       </list>
     </option>
   </component>

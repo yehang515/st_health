@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!--namespace指定mapper接口-->
 <mapper namespace="com.itheima.dao.RoleDao">
-    <select id="findByUserId" parameterType="int" resultType="Role">
+    <select id="findByUserId" parameterType="int" resultType="com.itheima.pojo.Role">
         select r.* from t_role r,t_user_role ur where r.id = ur.role_id and user_id=#{userId}
     </select>
 

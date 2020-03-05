@@ -4,12 +4,12 @@
 <!--namespace指定mapper接口-->
 <mapper namespace="com.itheima.dao.MemberDao">
     <!--根据电话查询会员-->
-    <select id="findByTel" parameterType="String" resultType="member">
+    <select id="findByTel" parameterType="String" resultType="com.itheima.pojo.member">
         select * from t_member where phoneNumber = #{phoneNumber}
     </select>
 
     <!--新建一个会员信息-->
-    <insert id="add" parameterType="member">
+    <insert id="add" parameterType="com.itheima.pojo.member">
     <selectKey resultType="int" keyProperty="id" order="AFTER">
         SELECT LAST_INSERT_ID()
     </selectKey>

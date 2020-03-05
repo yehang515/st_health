@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!--namespace指定mapper接口-->
 <mapper namespace="com.itheima.dao.MenuDao">
-<select id="findMenuByUsername" parameterType="String" resultType="Menu">
+<select id="findMenuByUsername" parameterType="String" resultType="com.itheima.pojo.Menu">
     select a.* from t_menu a,t_user b,t_user_role c,t_role_menu d
     where a.id = d.menu_id and d.role_id = c.role_id and c.user_id = b.id and b.username = #{username}
 </select>
@@ -109,7 +109,7 @@
 
 
     <!--添加角色和菜单的中间关系表-->
-    <insert id="addRoleAndMenu" parameterType="map">
+    <insert id="addRoleAndMenu" parameterType="com.itheima.pojo.map">
         insert into t_role_menu
         values
         <foreach collection="menuIds" item="item" separator=",">

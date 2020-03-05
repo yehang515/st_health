@@ -8,24 +8,24 @@
     </select>
 
     <!--更新操作-->
-    <update id="updateOrderSetting" parameterType="orderSetting">
+    <update id="updateOrderSetting" parameterType="com.itheima.pojo.orderSetting">
         update t_ordersetting set number =#{number} where orderDate = #{orderDate}
     </update>
 
     <!--插入操作-->
-    <insert id="insertOrderSetting" parameterType="orderSetting">
+    <insert id="insertOrderSetting" parameterType="com.itheima.pojo.orderSetting">
         insert into t_ordersetting(number,orderDate) values(#{number},#{orderDate})
     </insert>
 
-    <select id="getOrderListByDateStr" parameterType="string" resultType="orderSetting">
+    <select id="getOrderListByDateStr" parameterType="string" resultType="com.itheima.pojo.orderSetting">
         SELECT * from t_ordersetting where orderDate like CONCAT(CONCAT(#{date}),'%')
     </select>
 
-    <select id="findOrderByDate" parameterType="date" resultType="orderSetting">
+    <select id="findOrderByDate" parameterType="date" resultType="com.itheima.pojo.orderSetting">
         SELECT * from t_ordersetting WHERE orderDate = #{orderDate}
     </select>
 
-    <update id="editReservations" parameterType="orderSetting">
+    <update id="editReservations" parameterType="com.itheima.pojo.orderSetting">
         UPDATE t_ordersetting set reservations = #{reservations}
     </update>
 </mapper>

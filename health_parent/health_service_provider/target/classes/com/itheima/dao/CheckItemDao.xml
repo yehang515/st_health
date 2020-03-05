@@ -59,4 +59,8 @@ values
         </set>
         where id=#{id}
     </update>
+
+    <select id="findAllcheckItemsBycheckgroupId" resultType="com.itheima.pojo.CheckItem">
+        SELECT * FROM t_checkitem WHERE id IN (SELECT checkitem_id FROM `t_checkgroup_checkitem` WHERE checkgroup_id =#{id})
+    </select>
 </mapper>

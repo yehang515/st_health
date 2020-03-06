@@ -25,4 +25,6 @@ public interface SetmealDao {
     Setmeal finSetmealById(Integer id);
 
     List<String> findAllsetmealNames();
+
+    Object findById(Integer id);
 }
